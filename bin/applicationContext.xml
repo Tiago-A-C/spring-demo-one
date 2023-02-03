@@ -7,6 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- Context location: loads properties from external file -->
+	<context:property-placeholder location="classpath:sport.properties"/>
     <!-- Define your beans here -->
     
     <!-- Add a logger config to see logging messages.		
@@ -32,6 +34,11 @@
     	class="com.udemy.springdemo.TennisCoach">
     	<!-- setting setter injection-->
     	<property name="fortuneService" ref="myFortune" />
+    	
+    	<!-- injecting literal values-->
+    	<property name="email" value="${coach.email}"></property>
+    	<property name="team" value="${coach.team}"></property>
+
 	</bean>
     
 </beans>
